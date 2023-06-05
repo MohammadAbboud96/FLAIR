@@ -821,6 +821,8 @@ class TweetsOperations(MapSplit,TextPreprocessing,DataOperations):
             dff[probability_label_name]=probabilty
         
         self.merged_df=pd.concat(self.dfs)
+        if len(self.merged_df)>0:
+            self.data=self.merged_df
         
     
     def get_label_semantic_coherence(self,df,tweet_label='tweet_labels_10',embedding_name='embeddings'):
